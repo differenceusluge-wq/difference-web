@@ -1,63 +1,108 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Difference - Digitalna rješenja</title>
+    <title>Difference - Digitalna rješenja koja čine razliku</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .gradient-text { background: linear-gradient(90deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
     </style>
 </head>
-<body class="bg-white text-slate-900">
+<body class="bg-slate-50 text-slate-900">
+
     <!-- Navigacija -->
-    <nav class="max-w-7xl mx-auto flex justify-between items-center p-6">
-        <div class="text-2xl font-extrabold text-blue-600 tracking-tighter">DIFFERENCE.</div>
-        <div class="space-x-6 font-medium">
-            <a href="#usluge" class="hover:text-blue-600 transition">Usluge</a>
-            <a href="mailto:info@difference-usluge.com.hr" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">Kontakt</a>
+    <nav class="fixed w-full z-50 top-0 px-6 py-4">
+        <div class="max-w-7xl mx-auto glass rounded-2xl px-8 py-4 flex justify-between items-center shadow-lg">
+            <div class="text-2xl font-extrabold tracking-tighter gradient-text">DIFFERENCE.</div>
+            <div class="hidden md:flex gap-8 font-semibold text-sm uppercase tracking-wider">
+                <a href="#usluge" class="hover:text-blue-600 transition">Usluge</a>
+                <a href="#o-nama" class="hover:text-blue-600 transition">O nama</a>
+                <a href="mailto:info@difference-usluge.com.hr" class="text-blue-600">Kontakt</a>
+            </div>
+            <button onclick="toggleLang()" id="langBtn" class="bg-slate-900 text-white px-4 py-2 rounded-xl text-sm font-bold hover:bg-blue-600 transition">EN</button>
         </div>
     </nav>
 
     <!-- Hero Sekcija -->
-    <header class="max-w-7xl mx-auto px-6 py-24 text-center">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-            Digitalna rješenja koja čine <span class="text-blue-600">razliku</span>
-        </h1>
-        <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10">
-            Specijalizirani obrt za izradu modernih web stranica, SEO optimizaciju i digitalni marketing. Vaš uspjeh je naša misija.
-        </p>
-        <a href="mailto:info@difference-usluge.com.hr" class="inline-block bg-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform">
-            Započni projekt <i class="fas fa-arrow-right ml-2"></i>
-        </a>
-    </header>
+    <section class="pt-40 pb-20 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-widest mb-6 inline-block">Moderni web dizajn & SEO</span>
+            <h1 id="heroTitle" class="text-5xl md:text-8xl font-extrabold mb-8 leading-[1.1] tracking-tight">
+                Digitalna rješenja koja čine <span class="gradient-text text-razliku">razliku</span>
+            </h1>
+            <p id="heroSubtitle" class="text-xl text-slate-600 max-w-2xl mx-auto mb-12 leading-relaxed">
+                Specijalizirani obrt za izradu web stranica visoke konverzije. Pomažemo vam da se istaknete u digitalnom svijetu kroz dizajn i strategiju.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="mailto:info@difference-usluge.com.hr" class="bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-xl shadow-blue-200 hover:scale-105 transition-all">Pošaljite upit</a>
+                <a href="#usluge" class="bg-white text-slate-900 px-10 py-5 rounded-2xl font-bold text-lg border border-slate-200 hover:bg-slate-50 transition-all">Naše usluge</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- Usluge -->
-    <section id="usluge" class="bg-slate-50 py-20 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
-                <i class="fas fa-laptop-code text-3xl text-blue-600 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Web Dizajn</h3>
-                <p class="text-slate-600">Izrada responzivnih stranica koje izgledaju savršeno na mobitelima i računalima.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
-                <i class="fas fa-chart-line text-3xl text-blue-600 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">SEO Optimizacija</h3>
-                <p class="text-slate-600">Povećavamo vašu vidljivost na Googleu kako bi vas kupci lakše pronašli.</p>
-            </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition">
-                <i class="fas fa-bullhorn text-3xl text-blue-600 mb-4"></i>
-                <h3 class="text-xl font-bold mb-2">Marketing</h3>
-                <p class="text-slate-600">Targetirane kampanje koje donose stvarne rezultate i nove klijente.</p>
+    <!-- Usluge Grid -->
+    <section id="usluge" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8" id="servicesGrid">
+                <!-- Web Dizajn -->
+                <div class="p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-300 transition-all group">
+                    <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Web Dizajn</h3>
+                    <p class="text-slate-600 leading-relaxed">Brze, moderne i responzivne stranice optimizirane za prodaju i korisničko iskustvo.</p>
+                </div>
+                <!-- SEO -->
+                <div class="p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:border-purple-300 transition-all group">
+                    <div class="w-14 h-14 bg-purple-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">SEO Optimizacija</h3>
+                    <p class="text-slate-600 leading-relaxed">Pozicioniranje na prvu stranicu Googlea kako bi vas klijenti pronašli organski.</p>
+                </div>
+                <!-- Marketing -->
+                <div class="p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:border-pink-300 transition-all group">
+                    <div class="w-14 h-14 bg-pink-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Digitalni Marketing</h3>
+                    <p class="text-slate-600 leading-relaxed">Strategije oglašavanja na društvenim mrežama i Google Ads platformi.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 text-center text-slate-500 border-t">
+    <footer class="py-12 border-t border-slate-100 text-center text-slate-400 font-medium">
         <p>© 2026 Difference usluge. Sva prava pridržana.</p>
     </footer>
+
+    <script>
+        let currentLang = 'hr';
+        const content = {
+            hr: {
+                title: 'Digitalna rješenja koja čine <span class="gradient-text">razliku</span>',
+                subtitle: 'Specijalizirani obrt za izradu web stranica visoke konverzije. Pomažemo vam da se istaknete u digitalnom svijetu kroz dizajn i strategiju.',
+                btn: 'EN'
+            },
+            en: {
+                title: 'Digital solutions that make a <span class="gradient-text">difference</span>',
+                subtitle: 'Specialized craft for high-conversion website development. We help you stand out in the digital world through design and strategy.',
+                btn: 'HR'
+            }
+        };
+
+        function toggleLang() {
+            currentLang = currentLang === 'hr' ? 'en' : 'hr';
+            document.getElementById('heroTitle').innerHTML = content[currentLang].title;
+            document.getElementById('heroSubtitle').innerText = content[currentLang].subtitle;
+            document.getElementById('langBtn').innerText = content[currentLang].btn;
+        }
+    </script>
 </body>
 </html>
