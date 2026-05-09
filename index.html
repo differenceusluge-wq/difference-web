@@ -3,85 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Difference | Digitalna Agencija</title>
+    <title>Difference | Premium Digitalna Agencija</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- AOS za animacije pri skrolanju -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
-        .hero-gradient { background: radial-gradient(circle at top right, #eff6ff, #ffffff); }
-        .blob { position: absolute; width: 500px; height: 500px; background: #dbeafe; filter: blur(80px); border-radius: 50%; z-index: -1; animation: float 20s infinite alternate; }
-        @keyframes float { from { transform: translate(0, 0); } to { transform: translate(100px, 50px); } }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); }
+        .nav-glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .project-card:hover img { transform: scale(1.1); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
     </style>
 </head>
-<body class="hero-gradient text-slate-900">
-    <div class="blob top-[-100px] right-[-100px]"></div>
+<body class="gradient-bg text-slate-900">
 
-    <!-- Navigacija s efektom stakla -->
-    <nav class="fixed w-full z-50 p-6" data-aos="fade-down">
-        <div class="max-w-7xl mx-auto bg-white/70 backdrop-blur-md border border-white/20 rounded-3xl p-4 flex justify-between items-center shadow-xl">
-            <div class="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">DIFFERENCE.</div>
-            <div class="hidden md:flex gap-8 font-bold text-sm uppercase tracking-tighter">
-                <a href="#usluge" class="hover:text-blue-600 transition">Usluge</a>
-                <a href="#kontakt" class="bg-blue-600 text-white px-6 py-2 rounded-xl hover:shadow-lg hover:shadow-blue-200 transition">Započni Projekt</a>
+    <!-- Navigacija -->
+    <nav class="fixed w-full z-50 nav-glass py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tighter text-blue-600">DIFFERENCE.</div>
+            <div class="hidden md:flex gap-8 font-bold text-sm uppercase">
+                <a href="#o-nama" class="hover:text-blue-600 transition">O nama</a>
+                <a href="#projekti" class="hover:text-blue-600 transition">Projekti</a>
+                <a href="#faq" class="hover:text-blue-600 transition">FAQ</a>
+                <a href="#kontakt" class="bg-blue-600 text-white px-5 py-2 rounded-xl hover:bg-blue-700 transition">Kontakt</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Sekcija s animacijama -->
-    <section class="relative pt-48 pb-32 px-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8" data-aos="zoom-out-up" data-aos-duration="1000">
-                Stvaramo web koji <br><span class="text-blue-600 italic">prodaje.</span>
-            </h1>
-            <p class="text-xl text-slate-500 max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">
-                Ne radimo samo obične stranice. Gradimo digitalne sustave koji vašem obrtu donose mjerljivu razliku na tržištu.
-            </p>
-            <div class="flex justify-center gap-6" data-aos="fade-up" data-aos-delay="400">
-                <a href="#kontakt" class="bg-slate-900 text-white px-10 py-5 rounded-2xl font-bold hover:scale-105 transition-transform shadow-2xl">Naši Radovi</a>
-                <a href="#usluge" class="bg-white border border-slate-200 px-10 py-5 rounded-2xl font-bold hover:bg-slate-50 transition">Što Radimo?</a>
+    <!-- HERO SEKCIJA -->
+    <section class="pt-48 pb-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto" data-aos="zoom-in">
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight mb-8">Dizajn koji stvara <span class="text-blue-600">rezultate.</span></h1>
+            <p class="text-xl text-slate-600 mb-10">Difference je agencija fokusirana na rast vašeg poslovanja kroz vrhunski web dizajn i SEO strategije.</p>
+            <a href="#projekti" class="bg-slate-900 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition inline-block">Pogledaj portfolio</a>
+        </div>
+    </section>
+
+    <!-- O NAMA -->
+    <section id="o-nama" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-extrabold mb-6">Tko smo mi?</h2>
+                <p class="text-lg text-slate-600 mb-6">Mi smo tim kreativaca i tehničara koji ne vjeruju u "prosječno". Svaki projekt za nas je prilika da pomaknemo granice onoga što je moguće na webu.</p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="p-4 bg-slate-50 rounded-2xl"><h4 class="text-3xl font-bold text-blue-600">50+</h4><p>Projekata</p></div>
+                    <div class="p-4 bg-slate-50 rounded-2xl"><h4 class="text-3xl font-bold text-blue-600">100%</h4><p>Zadovoljstvo</p></div>
+                </div>
+            </div>
+            <div class="rounded-[40px] overflow-hidden shadow-2xl" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800" alt="Office">
             </div>
         </div>
     </section>
 
-    <!-- Kartice Usluga (Scale animacija) -->
-    <section id="usluge" class="py-32 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
-            <div class="group bg-white p-12 rounded-[40px] shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-50" data-aos="fade-right" data-aos-delay="100">
-                <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-8 group-hover:scale-110 transition-transform">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+    <!-- PORTFOLIO / PROJEKTI -->
+    <section id="projekti" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-extrabold text-center mb-16" data-aos="fade-up">Naši istaknuti projekti</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Projekt 1 -->
+                <div class="project-card group relative overflow-hidden rounded-[30px] bg-white shadow-xl" data-aos="flip-left">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800" class="w-full h-full object-cover transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2">E-commerce Platforma "X"</h3>
+                        <p class="text-slate-500">Povećanje prodaje za 140% u prva tri mjeseca.</p>
+                    </div>
                 </div>
-                <h3 class="text-2xl font-bold mb-4">Web Razvoj</h3>
-                <p class="text-slate-500">Ultra-brze stranice koje Google obožava.</p>
-            </div>
-
-            <div class="group bg-white p-12 rounded-[40px] shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-50" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 mb-8 group-hover:scale-110 transition-transform">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                <!-- Projekt 2 -->
+                <div class="project-card group relative overflow-hidden rounded-[30px] bg-white shadow-xl" data-aos="flip-right">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800" class="w-full h-full object-cover transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-2">Corporate Web "Difference"</h3>
+                        <p class="text-slate-500">Moderni UI dizajn za tehnološki startup.</p>
+                    </div>
                 </div>
-                <h3 class="text-2xl font-bold mb-4">SEO Dominacija</h3>
-                <p class="text-slate-500">Budite prvi tamo gdje vas kupci traže.</p>
-            </div>
-
-            <div class="group bg-white p-12 rounded-[40px] shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-50" data-aos="fade-left" data-aos-delay="500">
-                <div class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-8 group-hover:scale-110 transition-transform">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                </div>
-                <h3 class="text-2xl font-bold mb-4">Mobile First</h3>
-                <p class="text-slate-500">Dizajn prilagođen palcu i oku modernog korisnika.</p>
             </div>
         </div>
     </section>
 
-    <!-- Skripte za aktivaciju animacija -->
+    <!-- FAQ SEKCIJA -->
+    <section id="faq" class="py-24 px-6 bg-slate-900 text-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-extrabold text-center mb-16" data-aos="fade-up">Česta pitanja</h2>
+            <div class="space-y-4">
+                <div class="border-b border-slate-700 pb-4 cursor-pointer" onclick="toggleFaq(1)">
+                    <div class="flex justify-between items-center text-xl font-bold">Koliko traje izrada stranice? <span id="icon-1">+</span></div>
+                    <div id="faq-1" class="accordion-content pt-4 text-slate-400 text-lg">Prosječno vrijeme izrade je 3 do 5 tjedana, ovisno o kompleksnosti projekta.</div>
+                </div>
+                <div class="border-b border-slate-700 pb-4 cursor-pointer" onclick="toggleFaq(2)">
+                    <div class="flex justify-between items-center text-xl font-bold">Radite li i održavanje? <span id="icon-2">+</span></div>
+                    <div id="faq-2" class="accordion-content pt-4 text-slate-400 text-lg">Naravno. Nudimo pakete mjesečnog održavanja i sigurnosnih kopija.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
+            <h2 class="text-5xl font-extrabold mb-8">Spremni za razliku?</h2>
+            <p class="text-xl mb-10">Pošaljite nam mail i javljamo se u roku od 24 sata.</p>
+            <a href="mailto:info@difference-usluge.com.hr" class="bg-blue-600 text-white px-12 py-6 rounded-3xl text-2xl font-bold shadow-2xl hover:bg-blue-700 transition inline-block">info@difference-usluge.com.hr</a>
+        </div>
+    </section>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: false,
-            mirror: true
-        });
+        AOS.init({ duration: 1000, once: true });
+
+        function toggleFaq(id) {
+            const content = document.getElementById(`faq-${id}`);
+            const icon = document.getElementById(`icon-${id}`);
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.innerText = "+";
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.innerText = "-";
+            }
+        }
     </script>
 </body>
 </html>
